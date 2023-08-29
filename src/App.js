@@ -5,9 +5,9 @@ import { calculateBestOption } from './utils/calculateHandle.js'
 
 function App() {
 
-  const [alcoolInput, setAlcoolInput] = useState()
-  const [gasolinaInput, setGasolinaInput] = useState()
-  const [info, setInfo] = useState({});
+const [alcoolInput, setAlcoolInput] = useState()
+const [gasolinaInput, setGasolinaInput] = useState()
+const [info, setInfo] = useState({});
 
   return (
     <div className="App">
@@ -24,48 +24,48 @@ function App() {
         <form action="" onSubmit={(event) => {
           calculateBestOption(event, alcoolInput, gasolinaInput, setInfo)
         }}>
-          <div className='container-input'>
-            <label className='title-label'>Preço da Gasolina/L</label>
-            <input className='input-dev'
-              type='number'
-              placeholder='Insira o Preço da Gasolina'
-              min="1"
-              step="0.01"
-              required
-              value={gasolinaInput}
-              onChange={(event) => setGasolinaInput(Number(event.target.value))}
-            ></input>
-            <label className='title-label'>Preço da Álcool/L</label>
-            <input className='input-dev'
-              type='number'
-              placeholder='Insira o Preço da Alcool'
-              min="1"
-              step="0.01"
-              required
-              value={alcoolInput}
-              onChange={(event) => setAlcoolInput(Number(event.target.value))}
-            ></input>
-          </div>
-          <div className='container-button'>
-            <button type='submit'>Calcular</button>
-          </div>
+        <div className='container-input'>
+          <label className='title-label'>Preço da Gasolina/L</label>
+          <input className='input-dev'
+            type='number'
+            placeholder='Insira o Preço da Gasolina'
+            min="1"
+            step="0.01"
+            required
+            value={gasolinaInput}
+            onChange={(event) => setGasolinaInput(Number(event.target.value))}
+          ></input>
+          <label className='title-label'>Preço da Álcool/L</label>
+          <input className='input-dev'
+            type='number'
+            placeholder='Insira o Preço da Alcool'
+            min="1"
+            step="0.01"
+            required
+            value={alcoolInput}
+            onChange={(event) => setAlcoolInput(Number(event.target.value))}
+          ></input>
+        </div>
+        <div className='container-button'>
+          <button type='submit'>Calcular</button>
+        </div>
         </form>
-        <footer>
-          <div className='resultado-container'>
-            {info && Object.keys(info).length > 0 && (
-              <section className="resultado">
-                <h2 className="resultado-title">
-                  {info.title}
-                </h2>
-                <span>Álcool {info.alcool}</span>
-                <span>Gasolina {info.gasolina}</span>
-              </section>
-            )}
-          </div>
-        </footer>
-      </header>
+      <footer>
+        <div className='resultado-container'>
+          {info && Object.keys(info).length > 0 && (
+            <section className="resultado">
+              <h2 className="resultado-title">
+                {info.title}
+              </h2>
+              <span>Álcool {info.alcool}</span>
+              <span>Gasolina {info.gasolina}</span>
+            </section>
+          )}
+        </div>
+      </footer>
+          </header>
     </div>
-
+    
   );
 }
 
